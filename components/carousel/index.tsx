@@ -212,7 +212,7 @@ class Carousel extends React.PureComponent<CarouselProps, CarouselState> {
     // 🌟 fix: `onMomentumScrollEnd` & `onScrollAnimationEnd` not support for web & android 🌟
     const isScrollAnimationEnd =
       !this.isScrolling &&
-      (this.props.vertical ? y / height : x / width) % 1 === 0
+      (this.props.vertical ? Math.abs(y % height) : Math.abs(x % width)) < 0.000092
 
     if (isScrollAnimationEnd) {
       this.updateIndex(currentOffset)

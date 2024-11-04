@@ -15,7 +15,7 @@ export default class BasicCarouselExample extends React.Component<any, any> {
     super(props)
     this.state = {
       selectedIndex: 2,
-      autoplay: true,
+      autoplay: false,
     }
   }
   onHorizontalSelectedIndexChange = (index: number) => {
